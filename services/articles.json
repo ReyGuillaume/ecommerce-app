@@ -1,0 +1,57 @@
+[
+	{
+		"name": "Merrell Continuum",
+		"tags": ["Chaussures", "Sport", "Randonnée"],
+		"price": 33.59,
+		"image": "article1",
+		"id": 1
+	}, {
+		"name": "Nike Model 8",
+		"tags": ["Chaussons", "Sport", "Dance"],
+		"price": 14.99,
+		"image": "article2",
+		"id": 2
+	}, {
+		"name": "Trensend",
+		"tags": ["Baskettes", "Ville"],
+		"price": 40.00,
+		"image": "article3",
+		"id": 3
+	}, {
+		"name": "Merrell Continuum",
+		"tags": ["Chaussures", "Sport", "Randonnée"],
+		"price": 33.59,
+		"image": "article1",
+		"id": 4
+	}, {
+		"name": "Nike Model 8",
+		"tags": ["Chaussons", "Sport", "Dance"],
+		"price": 14.99,
+		"image": "article2",
+		"id": 5
+	}, {
+		"name": "Trensend",
+		"tags": ["Baskettes", "Ville"],
+		"price": 40.00,
+		"image": "article3",
+		"id": 6
+	}, {
+		"name": "Merrell Continuum",
+		"tags": ["Chaussures", "Sport", "Randonnée"],
+		"price": 33.59,
+		"image": "article1",
+		"id": 7
+	}, {
+		"name": "Nike Model 8",
+		"tags": ["Chaussons", "Sport", "Dance"],
+		"price": 14.99,
+		"image": "article2",
+		"id": 8
+	}, {
+		"name": "Trensend",
+		"tags": ["Baskettes", "Ville"],
+		"price": 40.00,
+		"image": "article3",
+		"id": 9
+	}
+]

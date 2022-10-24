@@ -59,7 +59,10 @@
 
 .article-item {
     position: relative;
-    transition: .5s;
+    transition: .5s ease-in;
+    overflow: hidden;
+    border-radius: 5%;
+    color: var(--second-color);
 }
 .article-item:hover {
     transform: translateY(-1.5rem);
@@ -88,6 +91,26 @@
 .article-item__infos > p {
     color: #b2b2b2;
 }
+.article-item__infos > p > .tag {
+    cursor: pointer;
+    display: inline-block;
+    background: #d2d2d288;
+    border: 1px #b2b2b2 solid;
+    border-radius: 1rem;
+    padding: .25rem .5rem;
+    margin-right: .5rem;
+}
+.article-item__infos > a {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+.article-item__infos > a i {
+    transition: .5s ease-in;
+}
+.article-item__infos > a:hover i {
+    transform: translateX(50vw);
+}
 .article-item__infos > .price {
     display: flex;
     justify-content: space-between;
@@ -98,42 +121,18 @@
     color: var(--main-color);
     background: none;
     border: 1px var(--main-color) solid;
-    border-radius: 50%;
+    border-radius: 35%;
     width: 1.8rem;
     height: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: .5s;
+    transition: .5s ease-in;
 }
 .article-item__infos > .price button:hover {
     background: var(--main-color);
     color: #fff;
-}
-
-/* ======================== See more ======================== */
-
-.see-more {
-    color: var(--second-color);
-    background: none;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    display: flex;
-    gap: 1rem;
-    border: var(--second-color) 1px solid;
-    padding: .5rem 1rem;
-    transition: .5s;
-}
-.see-more:hover {
-    animation: snake 2s;
-}
-@keyframes snake {
-    10% {transform: scale(1.05) rotate(5deg);}
-    20% {transform: scale(1.05) rotate(-5deg);}
-    30% {transform: scale(1.05) rotate(5deg);}
-    40% {transform: none;}
 }
 
 /* ======================== Media Query ======================== */

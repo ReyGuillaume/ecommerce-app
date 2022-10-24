@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./global.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./src/style/global.css">
+    <link rel="stylesheet" href="./src/style/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -34,21 +34,21 @@
     <main>
         <div class="carousel">
             <div style="--item: 0" class="carousel__element">
-                <img src="./images/carousel/carousel1.jpg" alt="carousel first image">
+                <img src="./src/images/carousel/carousel1.jpg" alt="carousel first image">
                 <div class="comment">
                     <h2>Your style</h2>
                     <p>Get Up To 40% OFF</p>
                 </div>
             </div>
             <div style="--item: 1" class="carousel__element">
-                <img src="./images/carousel/carousel2.jpg" alt="carousel second image">
+                <img src="./src/images/carousel/carousel2.jpg" alt="carousel second image">
                 <div class="comment">
                     <h2>Your style</h2>
                     <p>Get Up To 40% OFF</p>
                 </div>
             </div>
             <div style="--item: 2" class="carousel__element">
-                <img src="./images/carousel/carousel3.jpg" alt="carousel third image">
+                <img src="./src/images/carousel/carousel3.jpg" alt="carousel third image">
                 <div class="comment">
                     <h2>Your style</h2>
                     <p>Get Up To 40% OFF</p>
@@ -58,11 +58,15 @@
 
         <div class="container">
 
-            <article class="article-item">
-                <img class="article-item__image" src="./images/articles/article1.jpg" alt="first article">
+            <!-- <article class="article-item">
+                <img class="article-item__image" src="./src/images/articles/article1.jpg" alt="first article">
                 <div class="article-item__infos">
                     <h3>Merrell continuum</h3>
                     <p>Chaussures, sport, randonnée</p>
+                    <a href="#" class="second-button">
+                        Voir le produit
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                     <div class="price">
                         <span>33.5$</span>
                         <button>
@@ -73,10 +77,14 @@
             </article>
 
             <article class="article-item">
-                <img class="article-item__image" src="./images/articles/article2.jpg" alt="first article">
+                <img class="article-item__image" src="./src/images/articles/article2.jpg" alt="first article">
                 <div class="article-item__infos">
                     <h3>Nike model 8</h3>
                     <p>Chaussons, sport, dance</p>
+                    <a href="#" class="second-button">
+                        Voir le produit
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                     <div class="price">
                         <span>33.5$</span>
                         <button>
@@ -87,10 +95,14 @@
             </article>
 
             <article class="article-item">
-                <img class="article-item__image" src="./images/articles/article3.jpg" alt="first article">
+                <img class="article-item__image" src="./src/images/articles/article3.jpg" alt="first article">
                 <div class="article-item__infos">
                     <h3>Lorem ipsum dolor sit amet consectetur.</h3>
                     <p>Bottine, ville</p>
+                    <a href="#" class="second-button">
+                        Voir le produit
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                     <div class="price">
                         <span>33.5$</span>
                         <button>
@@ -101,10 +113,14 @@
             </article>
 
             <article class="article-item">
-                <img class="article-item__image" src="./images/articles/article1.jpg" alt="first article">
+                <img class="article-item__image" src="./src/images/articles/article1.jpg" alt="first article">
                 <div class="article-item__infos">
                     <h3>Merrell continuum</h3>
                     <p>Chaussures, sport, randonnée</p>
+                    <a href="#" class="second-button">
+                        Voir le produit
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                     <div class="price">
                         <span>33.5$</span>
                         <button>
@@ -115,10 +131,14 @@
             </article>
 
             <article class="article-item">
-                <img class="article-item__image" src="./images/articles/article2.jpg" alt="first article">
+                <img class="article-item__image" src="./src/images/articles/article2.jpg" alt="first article">
                 <div class="article-item__infos">
                     <h3>Nike model 8</h3>
                     <p>Chaussons, sport, dance</p>
+                    <a href="#" class="second-button">
+                        Voir le produit
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                     <div class="price">
                         <span>33.5$</span>
                         <button>
@@ -129,10 +149,14 @@
             </article>
 
             <article class="article-item">
-                <img class="article-item__image" src="./images/articles/article3.jpg" alt="first article">
+                <img class="article-item__image" src="./src/images/articles/article3.jpg" alt="first article">
                 <div class="article-item__infos">
                     <h3>Lorem ipsum dolor sit amet consectetur.</h3>
                     <p>Bottine, ville</p>
+                    <a href="#" class="second-button">
+                        Voir le produit
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                     <div class="price">
                         <span>33.5$</span>
                         <button>
@@ -143,10 +167,14 @@
             </article>
 
             <article class="article-item">
-                <img class="article-item__image" src="./images/articles/article1.jpg" alt="first article">
+                <img class="article-item__image" src="./src/images/articles/article1.jpg" alt="first article">
                 <div class="article-item__infos">
                     <h3>Merrell continuum</h3>
                     <p>Chaussures, sport, randonnée</p>
+                    <a href="#" class="second-button">
+                        Voir le produit
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                     <div class="price">
                         <span>33.5$</span>
                         <button>
@@ -157,10 +185,14 @@
             </article>
 
             <article class="article-item">
-                <img class="article-item__image" src="./images/articles/article2.jpg" alt="first article">
+                <img class="article-item__image" src="./src/images/articles/article2.jpg" alt="first article">
                 <div class="article-item__infos">
                     <h3>Nike model 8</h3>
                     <p>Chaussons, sport, dance</p>
+                    <a href="#" class="second-button">
+                        Voir le produit
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                     <div class="price">
                         <span>33.5$</span>
                         <button>
@@ -171,10 +203,14 @@
             </article>
 
             <article class="article-item">
-                <img class="article-item__image" src="./images/articles/article3.jpg" alt="first article">
+                <img class="article-item__image" src="./src/images/articles/article3.jpg" alt="first article">
                 <div class="article-item__infos">
                     <h3>Lorem ipsum dolor sit amet consectetur.</h3>
                     <p>Bottine, ville</p>
+                    <a href="#" class="second-button">
+                        Voir le produit
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                     <div class="price">
                         <span>33.5$</span>
                         <button>
@@ -182,12 +218,12 @@
                         </button>
                     </div>
                 </div>
-            </article>
+            </article> -->
 
 
         </div>
 
-        <button class="see-more">See more...</button>
+        <button class="main-button see-more">See more...</button>
 
     </main>
 
@@ -224,4 +260,5 @@
 </body>
 </html>
 
-<script src="./main.js" defer></script>
+<script src="./src/js/main.js" defer></script>
+<script src="./src/js/interactions.js" defer></script>

@@ -9,7 +9,7 @@
 :root {
     --main-color: #E4A361;
     --second-color: #77544E;
-  }
+}
 
 body {
     font-size: 16px;
@@ -20,6 +20,34 @@ body {
     flex-direction: column;
     height: 100vh;
 }
+
+/* ======================== Buttons ======================== */
+
+.main-button,
+.second-button {
+    color: var(--second-color);
+    background: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    gap: 1rem;
+}
+.main-button {
+    border: var(--second-color) 1px solid;
+    padding: .5rem 1rem;
+    margin-right: auto;
+}
+.main-button:hover {
+    animation: snake 2s;
+}
+@keyframes snake {
+    10% {transform: scale(1.05) rotate(5deg);}
+    20% {transform: scale(1.05) rotate(-5deg);}
+    30% {transform: scale(1.05) rotate(5deg);}
+    40% {transform: none;}
+}
+
 /* ======================== Media Query ======================== */
 
 img {
