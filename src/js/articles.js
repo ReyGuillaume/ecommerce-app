@@ -28,33 +28,6 @@ const createCrousel = () => {
     })
 }
 
-        // <div class="carousel">
-
-        //     <div style="--item: 0" class="carousel__element">
-        //         <img src="./src/images/carousel/carousel1.jpg" alt="carousel first image">
-        //         <div class="comment">
-        //             <h2>Your style</h2>
-        //             <p>Get Up To 40% OFF</p>
-        //         </div>
-        //     </div>
-
-        //     <div style="--item: 1" class="carousel__element">
-        //         <img src="./src/images/carousel/carousel2.jpg" alt="carousel second image">
-        //         <div class="comment">
-        //             <h2>Your style</h2>
-        //             <p>Get Up To 40% OFF</p>
-        //         </div>
-        //     </div>
-
-        //     <div style="--item: 2" class="carousel__element">
-        //         <img src="./src/images/carousel/carousel3.jpg" alt="carousel third image">
-        //         <div class="comment">
-        //             <h2>Your style</h2>
-        //             <p>Get Up To 40% OFF</p>
-        //         </div>
-        //     </div>
-        // </div>
-
 const createItem = (item) => {
     // return the article displaying item's informations
     const container = document.querySelector("main>.container")
