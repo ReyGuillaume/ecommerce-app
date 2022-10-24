@@ -28,6 +28,7 @@ body {
     color: var(--second-color);
     background: none;
     text-decoration: none;
+    border: none;
     text-transform: uppercase;
     font-weight: bold;
     display: flex;
@@ -48,7 +49,7 @@ body {
     40% {transform: none;}
 }
 
-/* ======================== Media Query ======================== */
+/* ======================== Temp ======================== */
 
 img {
     width: 150px;
