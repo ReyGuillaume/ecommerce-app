@@ -20,10 +20,17 @@ body {
     flex-direction: column;
     height: 100vh;
 }
+/* ======================== Media Query ======================== */
+
+img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
 
 /* ======================== Header ======================== */
 header {
-    padding: 1.5rem 0;
+    padding: 1.5rem 0 0;
     display: flex;
     flex-direction: column;
     gap: .75rem;
@@ -34,6 +41,7 @@ header > h1 {
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
+    letter-spacing: 5px;
 }
 
 /* ======================== Navigation ======================== */
@@ -83,6 +91,9 @@ nav > * {
 
 main {
     flex-grow: 1;
+}
+main > * {
+    margin: 1.5rem;
 }
 
 /* ======================== Footer ======================== */
@@ -149,5 +160,6 @@ footer > .infos {
     }
     footer .footer-list {
         flex-direction: column;
+        gap: 2rem;
     }
 }

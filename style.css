@@ -32,19 +32,114 @@
 }
 @keyframes carousel-auto-scroll {
     0% {
-      transform: translateX(100px);
-      opacity: 0;
+        transform: translateX(100px);
+        opacity: 0;
     }
     10% {
-      transform: translateX(0);
-      opacity: 1;
+        transform: translateX(0);
+        opacity: 1;
     }
     20% {
-      transform: translateX(0);
-      opacity: 1;
+        transform: translateX(0);
+        opacity: 1;
     }
     30% {
-      transform: translateX(-100px);
-      opacity: 0;
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+}
+
+/* ======================== Article Container ======================== */
+
+.container {
+    display: grid;
+	grid-template-columns: repeat(auto-fill,minmax(min(20rem,80vw), 1fr));
+    gap: 1.5rem;
+}
+
+.article-item {
+    position: relative;
+    transition: .5s;
+}
+.article-item:hover {
+    transform: translateY(-1.5rem);
+    z-index: 1;
+}
+.article-item__image {
+    width: 100%;
+    height: 85%;
+    margin-bottom: 2rem;
+}
+.article-item__infos {
+    font-size: .9rem;
+    position: absolute;
+    bottom: 0;
+    padding: 2rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .45rem;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 75%, rgba(255,255,255,0) 100%);
+}
+.article-item__infos > h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.article-item__infos > p {
+    color: #b2b2b2;
+}
+.article-item__infos > .price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.article-item__infos > .price button {
+    font-size: 1.2rem;
+    color: var(--main-color);
+    background: none;
+    border: 1px var(--main-color) solid;
+    border-radius: 50%;
+    width: 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .5s;
+}
+.article-item__infos > .price button:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+/* ======================== See more ======================== */
+
+.see-more {
+    color: var(--second-color);
+    background: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    gap: 1rem;
+    border: var(--second-color) 1px solid;
+    padding: .5rem 1rem;
+    transition: .5s;
+}
+.see-more:hover {
+    animation: snake 2s;
+}
+@keyframes snake {
+    10% {transform: scale(1.05) rotate(5deg);}
+    20% {transform: scale(1.05) rotate(-5deg);}
+    30% {transform: scale(1.05) rotate(5deg);}
+    40% {transform: none;}
+}
+
+/* ======================== Media Query ======================== */
+
+@media screen and (min-width: 964px) {
+    .article-item:hover {
+        scale: 1.1;
     }
 }
