@@ -32,7 +32,7 @@
 }
 @keyframes carousel-auto-scroll {
     0% {
-        transform: translateX(100px);
+        transform: translateX(10vw);
         opacity: 0;
     }
     10% {
@@ -44,7 +44,7 @@
         opacity: 1;
     }
     30% {
-        transform: translateX(-100px);
+        transform: translateX(-10vw);
         opacity: 0;
     }
 }
