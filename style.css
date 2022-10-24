@@ -1,0 +1,50 @@
+/* ======================== Carousel ======================== */
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: min(30vw,30rem);
+
+}
+.carousel__element {
+    animation: carousel-auto-scroll calc(3 * 5s) infinite;
+    animation-delay: calc(var(--item) * 5s);
+    opacity: 0;
+    position: absolute;
+}
+.carousel__element > img {
+    width: 75vw;
+    height: min(30vw,30rem);
+}
+.carousel__element > .comment {
+    color: var(--second-color);
+    font-weight: bold;
+    background: var(--main-color);
+    padding: 2rem;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 10vw;
+    left: 2.5rem;
+    font-size: min(1.25vw, 1.25rem);
+    width: 32.5vw;
+    max-width: 26rem;
+}
+@keyframes carousel-auto-scroll {
+    0% {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    10% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    20% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    30% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+}
