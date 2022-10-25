@@ -1,5 +1,3 @@
-const body = document.querySelector("body")
-
 // ======================== Nav toggler ========================
 const nav = document.querySelector("nav")
 nav.querySelector(".toggle-menu").addEventListener("click", () => nav.classList.toggle("shown"))

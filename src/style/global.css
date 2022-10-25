@@ -69,12 +69,14 @@ body {
 }
 
 .back-button {
+    display: inline-block;
     font-size: 1.5rem;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
+    margin-right: 1rem;
 }
 
 /* ======================== Temp ======================== */
@@ -127,11 +129,12 @@ nav > * {
     box-shadow: 0 0 2px #cdcdcd;
     border-radius: 0 0 .35em;
     font-size: 1.5rem;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     padding: 1rem;
     cursor: pointer;
+    z-index: 99;
 }
 .cart-button {
     border-radius: 0 0 0 .35em;
@@ -143,6 +146,35 @@ nav > * {
     color: var(--second-color);
     background: var(--main-color);
 }
+.add-to-cart-anim {
+    z-index: 100;
+    position: fixed;
+    top: 2.75rem;
+    right: 1rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    scale: 0;
+    color: var(--second-color);
+    animation: addToCartAnim 2s ease-in-out;
+}
+@keyframes addToCartAnim {
+    15% {
+        transform: translateY(0);
+        opacity: 1;
+        scale: 1.3;
+    }
+    50% {
+        transform: translateY(0);
+        opacity: 1;
+        scale: 1.2;
+    }
+    100% {
+        transform: translateY(2.5rem);
+        opacity: .4;
+        scale: 1;
+    }
+}
+
 .menu {
     list-style-type: none;
     display: flex;
@@ -212,7 +244,7 @@ footer > .infos {
     color: #f3f4f5;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     gap: 2.5rem;
 }
 

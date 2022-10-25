@@ -1,3 +1,56 @@
+/* ================= Navbar Close / Open Animation ================= */
+
+.search-box {
+    margin: 50px auto;
+    font-size: min(1.5rem,5vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-box .search-box__input {
+    outline: none;
+    border: none;
+    background: none;
+    width: 0;
+    padding: 0;
+    color: var(--second-color);
+    float: left;
+    transition: .3s;
+    line-height: 2.5em;
+}
+.search-box .search-box__input:placeholder {
+    color: var(--main-color);
+}
+.search-box .search-box__label {
+    color: var(--second-color);
+    cursor: pointer;
+    float: right;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    background: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+.search-box .search-box__input:focus,
+.search-box:hover > .search-box__input,
+.search-box .search-box__input:not(:placeholder-shown) {
+    width: 17.5em;
+    padding: 0 0.375em;
+}
+.search-box:hover > label,
+.search-box input:focus + label,
+.search-box input:not(:placeholder-shown) + label {
+    background-color: #fff;
+    color: var(--main-color);
+}
+
+.hide-item {
+    display: none;
+}
+
 /* ======================== Carousel ======================== */
 
 .carousel {
@@ -108,13 +161,30 @@
     align-items: center;
 }
 
+/* ======================== Article Page ======================== */
+
+.article-page__heading {
+    padding-bottom: 1.8rem;
+    display: grid;
+    grid-template-columns: 1fr 1.8rem;
+    grid-template-rows: 1fr 1.8rem 1fr;
+}
+.article-page__heading .tags {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 0 1.8rem;
+}
+.article-page__heading .add-button {
+    grid-column: 2;
+    grid-row: 2;
+}
+
 /* ================= Carousel Manual-scroll ================= */
 
 .carousel-manual {
-    margin: 50px auto;
-    font-size: 16px;
-    width: 20em;
-    height: 15em;
+    margin: 2.5rem auto;
+    width: 15rem;
+    height: 10rem;
     position: relative;
     display: flex;
     overflow: auto;

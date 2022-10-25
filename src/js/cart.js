@@ -1,9 +1,13 @@
+const rabouleLaMoulaga = () => {
+    alert("Raboule La MOULAGA et met moi bien ! 🤑")
+}
+
 async function toggleCart() {
     document.querySelectorAll("main>*").forEach(elt => main.removeChild(elt))
 
-    createBackButton(main, createArticlesList)
-    const title = create("h2",main, "Your cart")
-        
+    const title = create("h2",main)
+    createBackButton(title, createArticlesList)
+    title.appendChild(document.createTextNode("Your cart :"))
     const container = create("div",main,null,"articles-container")
     cart.length === 0 ? create("p",container, "Your cart is empty") : cart.forEach(elt => createListItem(elt))
 
@@ -11,7 +15,9 @@ async function toggleCart() {
     cart.length === 0 ? total = 0 : cart.forEach(obj => {
         total += obj.price
     });
-    const price = create("div",main,`Amount : ${total.toFixed(2)}$`,"price")
+    create("div",main,`Amount : ${total.toFixed(2)}$`,"price")
+    const checkOut = create("button", main, "Checkout","main-button")
+    checkOut.addEventListener("click", rabouleLaMoulaga)
 }
 
 const cartButton = document.querySelector(".cart-button")

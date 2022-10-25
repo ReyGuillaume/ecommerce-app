@@ -1,16 +1,18 @@
+const body = document.querySelector("body")
+
 const create = (tagName, container, text=null, className=null, id=null) => {
     // return HTML element (tagName.className#id) in container with text, class and id
-    let element = container.appendChild(document.createElement(tagName))
-    text ? element.appendChild(document.createTextNode(text)) : element
-    className ? element.classList.add(className) : element
-    id ? element.id = id : element
-    return element
+    let elt = container.appendChild(document.createElement(tagName))
+    text ? elt.appendChild(document.createTextNode(text)) : elt
+    className ? elt.classList.add(className) : elt
+    id ? elt.id = id : elt
+    return elt
 }
 
 const main = document.querySelector("main")
 
-const createCrousel = () => {
-    const carousel = create("div",main,null,"carousel")
+const createCrousel = (container) => {
+    const carousel = create("div",container,null,"carousel")
     const carouselElts = [
         {img : "carousel1", title : "Your style", comment : "Get Up To 40% OFF", id : 0},
         {img : "carousel2", title : "Your style", comment : "Get Up To 40% OFF", id : 1},
@@ -27,6 +29,25 @@ const createCrousel = () => {
         create("p",comment,elt.comment)
     })
     return carousel
+}
+
+const searchForArticles = (e) => {
+    const articles = document.querySelectorAll(".articles-container>.article-item")
+	const searchedString = e.target.value.toLowerCase()
+    articles.forEach(elt => elt.querySelector(".article-item__infos h3").textContent.toLowerCase().includes(searchedString) ? elt.classList.remove("hide-item") : elt.classList.add("hide-item"))
+}
+
+const createSearchBox = (container) => {
+    const searchBox = create("div",container,null,"search-box")
+    const input = create("input",searchBox,null,"search-box__input")
+    input.type = "text"
+    input.placeholder = "Start Looking For A Specific Article"
+    input.addEventListener("input", searchForArticles)
+    const label = create("label",searchBox,null,"search-box__label","search-input")
+    label.htmlFor = "search-input"
+    const icon = create("i",label,null,"fas")
+    icon.classList.add("fa-search")
+    return searchBox
 }
 
 const createListItem = (item) => {
@@ -86,11 +107,20 @@ const createBackButton = (container, onClick) => {
     icon.classList.add("fa-chevron-left")
     return back
 }
+
+const createAddToCartAnimation = () => {
+    const anim = create("p",body,"+ 1","add-to-cart-anim")
+    setTimeout(() => body.removeChild(anim),2000)
+    console.log("coucou")
+}
+
 const createAddToCartButton = (container, indice) => {
     const add = create("button",container,null,"add-button")
     add.addEventListener("click", e => addToCart(e,indice))
     const icon = create("i",add, null,"fas")
     icon.classList.add("fa-plus")
+    add.addEventListener("click",createAddToCartAnimation)
+    return add
 }
 
 
@@ -98,17 +128,16 @@ async function createArticlePage(e, elt) {
     document.querySelectorAll("main>*").forEach(elt => main.removeChild(elt))
 
     const data = await fetchData();
-
-    data.filter(obj => obj.id === elt.idItem)
-    article = data[0]
+    let article = data.filter(obj => obj.id === elt.idItem)
+    article = article[0]
 
     const container = create("div",main,null,"article-page")
     const heading = create("div",container,null,"article-page__heading")
-    createBackButton(heading, createArticlesList)
-    create("h2",heading,article.name)
+    const title = create("h2",heading)
+    createBackButton(title, createArticlesList)
+    title.appendChild(document.createTextNode(article.name))
     const tags = create("p",heading,null,"tags")
     article.tags.forEach(tag => create("span",tags,tag,"tags__tag"))
-    
     createAddToCartButton(heading, elt.idItem)
 
     create("p",container,article.description)
@@ -129,7 +158,8 @@ async function createArticlesList() {
 
     const data = await fetchData();
 
-    createCrousel()
+    createCrousel(main)
+    createSearchBox(main)
 
     create("div",main,null,"articles-container")
     data.forEach(elt => createListItem(elt))
