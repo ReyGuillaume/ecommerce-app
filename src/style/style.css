@@ -89,10 +89,10 @@
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-.article-item__infos > p {
+.tags {
     color: #b2b2b2;
 }
-.article-item__infos > p > .tag {
+.tags__tag {
     cursor: pointer;
     display: inline-block;
     background: #eeeeee88;
@@ -101,23 +101,13 @@
     padding: .25rem .5rem;
     margin-right: .5rem;
 }
-.article-item__infos > a {
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-}
-.article-item__infos > a i {
-    transition: .5s ease-in;
-}
-.article-item__infos > a:hover i {
-    transform: translateX(50vw);
-}
 .article-item__infos > .price {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.article-item__infos > .price button {
+
+.add-button {
     font-size: 1.2rem;
     color: var(--main-color);
     background: none;
@@ -134,6 +124,28 @@
 .article-item__infos > .price button:hover {
     background: var(--main-color);
     color: #fff;
+}
+
+
+/* ================= Carousel Manual-scroll ================= */
+
+.carousel-manual {
+    margin: 50px auto;
+    font-size: 16px;
+    width: 20em;
+    height: 15em;
+    position: relative;
+    display: flex;
+    overflow: auto;
+}
+.carousel-manual__image {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    position: sticky;
+    left: 0;
+    flex-shrink: 0;
+    object-fit: cover;
 }
 
 /* ======================== Media Query ======================== */

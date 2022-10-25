@@ -33,6 +33,7 @@ body {
     font-weight: bold;
     display: flex;
     gap: 1rem;
+    cursor: pointer;
 }
 .main-button {
     border: var(--second-color) 1px solid;
@@ -72,23 +73,43 @@ header > h1 {
     text-align: center;
     letter-spacing: 5px;
 }
+/* header > h1:hover {
+    animation: traslateTop 1s ease-in-out forwards;
+
+}
+@keyframes translateTop {
+    from {
+        transform: translateY(150rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+} */
 
 /* ======================== Navigation ======================== */
 
 nav > * {
     transition: .5s;
 }
-.toggle-menu {
+.toggle-menu,
+.cart-button {
     color: var(--main-color);
     background: #FFF;
     box-shadow: 0 0 2px #cdcdcd;
-    border-radius: 0 0 0 .5em;
+    border-radius: 0 0 .35em;
     font-size: 1.5rem;
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     padding: 1rem;
     cursor: pointer;
+}
+.cart-button {
+    border-radius: 0 0 0 .35em;
+    left: unset;
+    right: 0;
 }
 .menu {
     list-style-type: none;
@@ -183,7 +204,8 @@ footer > .infos {
         z-index: 10;
         border-radius: 0 0 1em;
     }
-    nav.shown .menu {
+    nav.shown .menu,
+    nav.shown .toggle-menu {
         box-shadow: 0 0 2px #cdcdcd;
         transform: translateX(45vw);
     }
