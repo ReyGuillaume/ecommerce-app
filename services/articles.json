@@ -3,7 +3,7 @@
 		"name": "Merrell Continuum",
 		"tags": ["Chaussures", "Sport", "Randonnée"],
 		"price": 33.59,
-		"images": ["article1","article2","article3"],
+		"images": ["article1","article2"],
 		"description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem nihil nemo sapiente consequatur eum consectetur nulla, facere, ipsum, incidunt atque ab non amet suscipit laudantium? Et iste modi quae reprehenderit.",
 		"id": 1
 	}, {

@@ -50,6 +50,33 @@ body {
     40% {transform: none;}
 }
 
+.add-button {
+    font-size: 1.2rem;
+    color: var(--main-color);
+    background: none;
+    border: 1px var(--main-color) solid;
+    border-radius: 35%;
+    width: 1.8rem;
+    height: 1.8rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .5s ease-in;
+}
+.add-button:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.back-button {
+    font-size: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
 /* ======================== Temp ======================== */
 
 img {
@@ -110,6 +137,11 @@ nav > * {
     border-radius: 0 0 0 .35em;
     left: unset;
     right: 0;
+}
+.toggle-menu:hover,
+.cart-button:hover {
+    color: var(--second-color);
+    background: var(--main-color);
 }
 .menu {
     list-style-type: none;

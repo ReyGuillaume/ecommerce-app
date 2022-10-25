@@ -31,7 +31,7 @@ const createCrousel = () => {
 
 const createListItem = (item) => {
     // return the article displaying item's informations
-    const container = document.querySelector("main>.container")
+    const container = document.querySelector("main>.articles-container")
     const art = create("article",container,null,"article-item")
     art.idItem = item.id
     const image = create("img",art,null,"article-item__image")
@@ -42,14 +42,30 @@ const createListItem = (item) => {
     const tags = create("p",infos,null,"tags")
     item.tags.forEach(tag => create("span",tags,tag,"tags__tag"))
     const price = create("div",infos,null,"price")
-    create("span",price,`${item.price} $`)
-    createAddToCartButton(price)
+    create("span",price,`${item.price.toFixed(2)} $`)
+    createAddToCartButton(price, item.id)
+    art.addEventListener("click", e => createArticlePage(e, art))
     return art
 }
 
-const addToCart = (e) => {
+let cart = []
+
+async function fetchData() {
+    let data = []
+    await fetch("./services/articles.json")
+    .then(response => response.json())
+    .then(response => {data = response})
+    return data;
+}
+
+async function addToCart(e, indice) {
     e.stopPropagation()
-    alert("Wow ! Trop cool 🎉")
+    // alert("Wow ! Trop cool 🎉")
+
+    const data = await fetchData();
+    const article = data.filter(obj => obj.id === indice)
+
+    cart.push(...article)
 }
 
 const createArticleCarousel = (container, arr) => {
@@ -64,14 +80,15 @@ const createArticleCarousel = (container, arr) => {
 
 const createBackButton = (container, onClick) => {
     const back = create("button",container,null,"second-button")
+    back.classList.add("back-button")
     back.addEventListener("click", onClick)
     const icon = create("i",back,null,"fas")
     icon.classList.add("fa-chevron-left")
     return back
 }
-const createAddToCartButton = (container) => {
+const createAddToCartButton = (container, indice) => {
     const add = create("button",container,null,"add-button")
-    add.addEventListener("click", addToCart)
+    add.addEventListener("click", e => addToCart(e,indice))
     const icon = create("i",add, null,"fas")
     icon.classList.add("fa-plus")
 }
@@ -80,11 +97,7 @@ const createAddToCartButton = (container) => {
 async function createArticlePage(e, elt) {
     document.querySelectorAll("main>*").forEach(elt => main.removeChild(elt))
 
-    let data = []
-
-    await fetch("./services/articles.json")
-    .then(response => response.json())
-    .then(response => {data = response})
+    const data = await fetchData();
 
     data.filter(obj => obj.id === elt.idItem)
     article = data[0]
@@ -96,7 +109,7 @@ async function createArticlePage(e, elt) {
     const tags = create("p",heading,null,"tags")
     article.tags.forEach(tag => create("span",tags,tag,"tags__tag"))
     
-    createAddToCartButton(heading)
+    createAddToCartButton(heading, elt.idItem)
 
     create("p",container,article.description)
 
@@ -105,24 +118,25 @@ async function createArticlePage(e, elt) {
     return container
 }
 
+async function addArticleToList() {
+    const data = await fetchData();
+    data.forEach(elt => createListItem(elt))
+}
+
 async function createArticlesList() {
     
     document.querySelectorAll("main>*").forEach(elt => main.removeChild(elt))
 
-    let data = []
-
-    await fetch("./services/articles.json")
-    .then(response => response.json())
-    .then(response => {data = response})
+    const data = await fetchData();
 
     createCrousel()
 
-    create("div",main,null,"container")
+    create("div",main,null,"articles-container")
     data.forEach(elt => createListItem(elt))
 
-    let articles = main.querySelectorAll(".article-item")
-
-    articles.forEach(elt => elt.addEventListener("click", e => createArticlePage(e, elt)))
+    const seeMoreButton = create("button",main,"See more...","main-button")
+    seeMoreButton.classList.add("see-more")
+    seeMoreButton.addEventListener("click", addArticleToList)
 
 }
 

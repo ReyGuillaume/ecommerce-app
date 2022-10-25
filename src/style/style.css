@@ -51,7 +51,7 @@
 
 /* ======================== Article Container ======================== */
 
-.container {
+.articles-container {
     display: grid;
 	grid-template-columns: repeat(auto-fill,minmax(min(20rem,80vw), 1fr));
     gap: 1.5rem;
@@ -86,6 +86,7 @@
     background: linear-gradient(0deg, rgba(255,255,255,1) 75%, rgba(255,255,255,0) 100%);
 }
 .article-item__infos > h3 {
+    padding-top: 1rem;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -106,26 +107,6 @@
     justify-content: space-between;
     align-items: center;
 }
-
-.add-button {
-    font-size: 1.2rem;
-    color: var(--main-color);
-    background: none;
-    border: 1px var(--main-color) solid;
-    border-radius: 35%;
-    width: 1.8rem;
-    height: 1.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: .5s ease-in;
-}
-.article-item__infos > .price button:hover {
-    background: var(--main-color);
-    color: #fff;
-}
-
 
 /* ================= Carousel Manual-scroll ================= */
 
