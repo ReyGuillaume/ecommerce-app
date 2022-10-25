@@ -16,8 +16,8 @@ const main = document.querySelector("main")
 const createCrousel = (container) => {
     const carousel = create("div",container,null,"carousel")
     const carouselElts = [
-        {img : "carousel1", title : "Your style", comment : "Get Up To 40% OFF", id : 0},
-        {img : "carousel2", title : "Your style", comment : "Get Up To 40% OFF", id : 1},
+        {img : "carousel1", title : "Winter is comming", comment : "Get Up To 40% OFF", id : 0},
+        {img : "carousel2", title : "Your style", comment : "Get Up To 50% OFF", id : 1},
         {img : "carousel3", title : "Your style", comment : "Get Up To 40% OFF", id : 2}
     ]
     carouselElts.forEach(elt => {
@@ -90,11 +90,15 @@ async function addToCart(e, indice) {
 }
 
 const createArticleCarousel = (container, arr) => {
-    const carDiv =  create("div",container,null,"carousel-manual")
+    const car =  create("div",container,null,"carousel-manual-container")
+    const carList =  create("ul",car,null,"carousel-manual__alt-list")
     arr.forEach(elt => {
-        create("img",carDiv,null,"carousel-manual__image",null,`./src/images/articles/${elt}.jpg`,elt)
+        const item = create("li",carList,null,"carousel-manual__alt")
+        create("img",item,null,"carousel-manual__alt-image",null,`./src/images/articles/${elt}.jpg`,elt)
     })
-    return carDiv
+    const carDiv =  create("div",car,null,"carousel-manual__carousel")
+    arr.forEach(elt => create("img",carDiv,null,"carousel-manual__image",null,`./src/images/articles/${elt}.jpg`,elt))
+    return car
 }
 
 const createBackButton = (container, onClick) => {

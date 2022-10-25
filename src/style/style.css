@@ -182,9 +182,26 @@
 }
 
 /* ================= Carousel Manual-scroll ================= */
-
-.carousel-manual {
+.carousel-manual-container {
     margin: 2.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.carousel-manual__alt-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.carousel-manual__alt-image {
+    border-radius: .5rem;
+    box-shadow: 0 0 2px #b2b2b2;
+    width: 2rem;
+    height: 2rem;
+}
+.carousel-manual__carousel {
     width: 15rem;
     height: 10rem;
     position: relative;
