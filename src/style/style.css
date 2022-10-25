@@ -8,6 +8,7 @@
     justify-content: center;
 }
 .search-box .search-box__input {
+    font-size: min(3vw,1rem);
     outline: none;
     border: none;
     background: none;
@@ -36,9 +37,10 @@
 }
 .search-box .search-box__input:focus,
 .search-box:hover > .search-box__input,
+/* .search-box.open > .search-box__input, */
 .search-box .search-box__input:not(:placeholder-shown) {
     width: 17.5em;
-    padding: 0 0.375em;
+    padding: 0 .375em;
 }
 .search-box:hover > label,
 .search-box input:focus + label,
@@ -74,12 +76,12 @@
     color: var(--second-color);
     font-weight: bold;
     background: var(--main-color);
-    padding: 2rem;
+    padding: min(5vw,2rem);
     text-transform: uppercase;
     position: absolute;
     bottom: 10vw;
     left: 2.5rem;
-    font-size: min(1.25vw, 1.25rem);
+    font-size: min(2vw, 1.25rem);
     width: 32.5vw;
     max-width: 26rem;
 }

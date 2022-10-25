@@ -1,11 +1,13 @@
 const body = document.querySelector("body")
 
-const create = (tagName, container, text=null, className=null, id=null) => {
+const create = (tagName, container, text=null, className=null, id=null, src=null, alt=null) => {
     // return HTML element (tagName.className#id) in container with text, class and id
     let elt = container.appendChild(document.createElement(tagName))
     text ? elt.appendChild(document.createTextNode(text)) : elt
     className ? elt.classList.add(className) : elt
     id ? elt.id = id : elt
+    src ? elt.src = src : elt
+    alt ? elt.alt = alt : elt
     return elt
 }
 
@@ -21,9 +23,7 @@ const createCrousel = (container) => {
     carouselElts.forEach(elt => {
         const carouselElt = create("div",carousel,null,"carousel__element") 
         carouselElt.style.setProperty('--item', elt.id)
-        const image = create("img",carouselElt)
-        image.src = `./src/images/carousel/${elt.img}.jpg`
-        image.alt = `carousel image ${elt.id}`
+        create("img",carouselElt,null,null,null,`./src/images/carousel/${elt.img}.jpg`,`carousel image ${elt.id}`)
         const comment = create("div",carouselElt,null,"comment")
         create("h2",comment,elt.title)
         create("p",comment,elt.comment)
@@ -39,6 +39,8 @@ const searchForArticles = (e) => {
 
 const createSearchBox = (container) => {
     const searchBox = create("div",container,null,"search-box")
+    // searchBox.addEventListener("click", () => searchBox.classList.add("open"))
+    // setTimeout(() => searchBox.classList.remove("open"), 5000)
     const input = create("input",searchBox,null,"search-box__input")
     input.type = "text"
     input.placeholder = "Start Looking For A Specific Article"
@@ -55,9 +57,7 @@ const createListItem = (item) => {
     const container = document.querySelector("main>.articles-container")
     const art = create("article",container,null,"article-item")
     art.idItem = item.id
-    const image = create("img",art,null,"article-item__image")
-    image.src = `./src/images/articles/${item.images[0]}.jpg`
-    image.alt = `article ${item.id}`
+    create("img",art,null,"article-item__image",null,`./src/images/articles/${item.images[0]}.jpg`,`article ${item.id}`)
     const infos = create("div",art,null,"article-item__infos")
     create("h3",infos,item.name)
     const tags = create("p",infos,null,"tags")
@@ -92,9 +92,7 @@ async function addToCart(e, indice) {
 const createArticleCarousel = (container, arr) => {
     const carDiv =  create("div",container,null,"carousel-manual")
     arr.forEach(elt => {
-        const image = create("img",carDiv,null,"carousel-manual__image")
-        image.src = `./src/images/articles/${elt}.jpg`
-        image.alt = elt
+        create("img",carDiv,null,"carousel-manual__image",null,`./src/images/articles/${elt}.jpg`,elt)
     })
     return carDiv
 }
@@ -108,10 +106,9 @@ const createBackButton = (container, onClick) => {
     return back
 }
 
-const createAddToCartAnimation = () => {
-    const anim = create("p",body,"+ 1","add-to-cart-anim")
+const createAddToCartAnimation = (e, text) => {
+    const anim = create("p",body,text,"add-to-cart-anim")
     setTimeout(() => body.removeChild(anim),2000)
-    console.log("coucou")
 }
 
 const createAddToCartButton = (container, indice) => {
@@ -119,7 +116,7 @@ const createAddToCartButton = (container, indice) => {
     add.addEventListener("click", e => addToCart(e,indice))
     const icon = create("i",add, null,"fas")
     icon.classList.add("fa-plus")
-    add.addEventListener("click",createAddToCartAnimation)
+    add.addEventListener("click",e => createAddToCartAnimation(e, "+ 1"))
     return add
 }
 
