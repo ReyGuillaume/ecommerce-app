@@ -239,6 +239,6 @@
 
 @media screen and (min-width: 964px) {
     .article-item:hover {
-        scale: 1.1;
+        scale: 1.05;
     }
 }

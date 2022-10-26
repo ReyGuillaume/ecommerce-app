@@ -1,66 +1,87 @@
 [
 	{
-		"name": "Merrell Continuum",
-		"tags": ["Chaussures", "Sport", "Randonnée"],
-		"price": 33.59,
-		"images": ["article1","article2"],
+		"name": "Collier immitation saphir",
+		"tags": ["Collier", "Saphir", "Apparat"],
+		"price": 55.59,
+		"images": ["article1","article6"],
 		"description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem nihil nemo sapiente consequatur eum consectetur nulla, facere, ipsum, incidunt atque ab non amet suscipit laudantium? Et iste modi quae reprehenderit.",
 		"id": 1
 	}, {
-		"name": "Nike Model 8",
-		"tags": ["Chaussons", "Sport", "Dance"],
-		"price": 14.99,
-		"images": ["article2","article3","article1"],
+		"name": "Couronne de perles",
+		"tags": ["Couronne", "Perles"],
+		"price": 34.99,
+		"images": ["article2","article3","article4"],
 		"description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem nihil nemo sapiente consequatur eum consectetur nulla, facere, ipsum, incidunt atque ab non amet suscipit laudantium? Et iste modi quae reprehenderit.",
 		"id": 2
 	}, {
-		"name": "Trensend",
-		"tags": ["Baskettes", "Ville"],
-		"price": 40.00,
-		"images": ["article3","article1","article2"],
+		"name": "Parure de diamants",
+		"tags": ["Diament", "Parure", "haute orphèvrerie"],
+		"price": 108.00,
+		"images": ["article3","article1","article6"],
 		"description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem nihil nemo sapiente consequatur eum consectetur nulla, facere, ipsum, incidunt atque ab non amet suscipit laudantium? Et iste modi quae reprehenderit.",
 		"id": 3
 	}, {
-		"name": "Merrell Continuum",
-		"tags": ["Chaussures", "Sport", "Randonnée"],
-		"price": 33.59,
-		"images": ["article1","article2","article3"],
+		"name": "Perles colorées",
+		"tags": ["Perles"],
+		"price": 15.59,
+		"images": ["article4","article5"],
 		"description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem nihil nemo sapiente consequatur eum consectetur nulla, facere, ipsum, incidunt atque ab non amet suscipit laudantium? Et iste modi quae reprehenderit.",
 		"id": 4
 	}, {
-		"name": "Nike Model 8",
-		"tags": ["Chaussons", "Sport", "Dance"],
-		"price": 14.99,
-		"images": ["article2","article3","article1"],
+		"name": "Coffret à bijoux",
+		"tags": ["Coffret", "Bijoux"],
+		"price": 24.99,
+		"images": ["article5","article4","article6"],
 		"description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem nihil nemo sapiente consequatur eum consectetur nulla, facere, ipsum, incidunt atque ab non amet suscipit laudantium? Et iste modi quae reprehenderit.",
 		"id": 5
 	}, {
-		"name": "Trensend",
-		"tags": ["Baskettes", "Ville"],
-		"price": 40.00,
-		"images": ["article3","article1","article2"],
+		"name": "Bague ornée d'un diament",
+		"tags": ["Bague", "Diament", "haute orphèvrerie"],
+		"price": 75.00,
+		"images": ["article6","article1"],
 		"description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem nihil nemo sapiente consequatur eum consectetur nulla, facere, ipsum, incidunt atque ab non amet suscipit laudantium? Et iste modi quae reprehenderit.",
 		"id": 6
 	}, {
-		"name": "Merrell Continuum",
-		"tags": ["Chaussures", "Sport", "Randonnée"],
-		"price": 33.59,
-		"images": ["article1","article2","article3"],
+		"name": "Collier immitation saphir",
+		"tags": ["Collier", "Saphir", "Apparat"],
+		"price": 55.59,
+		"images": ["article1","article6"],
 		"description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem nihil nemo sapiente consequatur eum consectetur nulla, facere, ipsum, incidunt atque ab non amet suscipit laudantium? Et iste modi quae reprehenderit.",
 		"id": 7
 	}, {
-		"name": "Nike Model 8",
-		"tags": ["Chaussons", "Sport", "Dance"],
-		"price": 14.99,
-		"images": ["article2","article3","article1"],
+		"name": "Couronne de perles",
+		"tags": ["Couronne", "Perles"],
+		"price": 34.99,
+		"images": ["article2","article3","article4"],
 		"description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem nihil nemo sapiente consequatur eum consectetur nulla, facere, ipsum, incidunt atque ab non amet suscipit laudantium? Et iste modi quae reprehenderit.",
 		"id": 8
 	}, {
-		"name": "Trensend",
-		"tags": ["Baskettes", "Ville"],
-		"price": 40.00,
-		"images": ["article3","article1","article2"],
+		"name": "Parure de diamants",
+		"tags": ["Diament", "Parure", "haute orphèvrerie"],
+		"price": 108.00,
+		"images": ["article3","article1","article6"],
 		"description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem nihil nemo sapiente consequatur eum consectetur nulla, facere, ipsum, incidunt atque ab non amet suscipit laudantium? Et iste modi quae reprehenderit.",
 		"id": 9
+	}, {
+		"name": "Perles colorées",
+		"tags": ["Perles"],
+		"price": 15.59,
+		"images": ["article4","article5"],
+		"description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem nihil nemo sapiente consequatur eum consectetur nulla, facere, ipsum, incidunt atque ab non amet suscipit laudantium? Et iste modi quae reprehenderit.",
+		"id": 10
+	}, {
+		"name": "Coffret à bijoux",
+		"tags": ["Coffret", "Bijoux"],
+		"price": 24.99,
+		"images": ["article5","article4","article6"],
+		"description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem nihil nemo sapiente consequatur eum consectetur nulla, facere, ipsum, incidunt atque ab non amet suscipit laudantium? Et iste modi quae reprehenderit.",
+		"id": 11
+	}, {
+		"name": "Bague ornée d'un diament",
+		"tags": ["Bague", "Diament", "haute orphèvrerie"],
+		"price": 75.00,
+		"images": ["article6","article1"],
+		"description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem nihil nemo sapiente consequatur eum consectetur nulla, facere, ipsum, incidunt atque ab non amet suscipit laudantium? Et iste modi quae reprehenderit.",
+		"id": 12
 	}
 ]
