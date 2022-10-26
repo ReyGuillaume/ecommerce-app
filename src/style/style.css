@@ -113,6 +113,7 @@
 }
 
 .article-item {
+    box-shadow: 0 0 5px 5px #fff;
     cursor: pointer;
     position: relative;
     transition: .5s ease-in;
@@ -165,6 +166,14 @@
 .article-item__infos > .price span {
     flex-grow: 1;
 }
+.article-item__infos > .price .actions:not(button) {
+    font-weight: bold;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
 
 /* ======================== Article Page ======================== */
 

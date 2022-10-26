@@ -1,4 +1,5 @@
 const body = document.querySelector("body")
+const main = document.querySelector("main")
 
 const create = (tagName, container, text=null, className=null, id=null, src=null, alt=null) => {
     // return HTML element (tagName.className#id) in container with text, class and id
@@ -11,7 +12,6 @@ const create = (tagName, container, text=null, className=null, id=null, src=null
     return elt
 }
 
-const main = document.querySelector("main")
 
 const createCrousel = (container) => {
     const carousel = create("div",container,null,"carousel")
@@ -52,6 +52,28 @@ const createSearchBox = (container) => {
     return searchBox
 }
 
+async function handleClickOnActionDiv(e, container, itemId) {
+    e.stopPropagation()
+    setTimeout(() => createActionsDivContent(container, itemId),250)
+}
+
+async function createActionsDivContent(container, itemId) {
+    container.replaceChildren("")
+    let containNbItem = cart.filter(obj => obj.id === itemId).length
+    if (containNbItem > 0) {
+        createCartActionButton(container, itemId, "delete")
+        container.appendChild(document.createTextNode(containNbItem))
+    }
+    createCartActionButton(container, itemId)
+}
+
+async function createActionsDiv(container, itemId) {
+    const actions = create("div",container, null, "actions")
+    await createActionsDivContent(actions, itemId)
+    actions.addEventListener("click", e => handleClickOnActionDiv(e, actions, itemId))
+    return actions
+}
+
 const createListItem = (item) => {
     // return the article displaying item's informations
     const container = document.querySelector("main>.articles-container")
@@ -64,8 +86,9 @@ const createListItem = (item) => {
     item.tags.forEach(tag => create("span",tags,tag,"tags__tag"))
     const price = create("div",infos,null,"price")
     create("span",price,`${item.price.toFixed(2)} $`)
-    cart.filter(obj => obj.id === item.id).length > 0 ? createCartActionButton(price, item.id, "delete") : null
-    createCartActionButton(price, item.id)
+    
+    createActionsDiv(price, item.id)
+
     art.addEventListener("click", e => createArticlePage(e, art))
     return art
 }
@@ -77,22 +100,28 @@ async function fetchData() {
     await fetch("./services/articles.json")
     .then(response => response.json())
     .then(response => {data = response})
-    return data;
+    return data
 }
 
 async function addToCart(e, indice) {
-    e.stopPropagation()
-
-    const data = await fetchData();
+    const data = await fetchData()
     const article = data.filter(obj => obj.id === indice)
 
     cart.push(...article)
 }
 
 const deleteFromCart = (e, indice) => {
-    e.stopPropagation()
-
-    let cartCopy = cart.filter(obj => obj.id !== indice)
+    let del = false
+    let i = 0
+    // let cartCopy = cart.filter(obj => obj.id !== indice)
+    cartCopy = [...cart]
+    while (!del && i < cartCopy.length) {
+        if (cartCopy[i].id === indice) {
+            cartCopy.splice(i, 1)
+            del = true
+        }
+        i++
+    }
     cart = cartCopy
 }
 
@@ -127,6 +156,7 @@ const createCartActionButton = (container, indice, action="add") => {
     button.addEventListener("click", e => {
         action === "delete" ? deleteFromCart(e,indice) : addToCart(e,indice)
         action === "delete" ? createAddToCartAnimation(e, "- 1") : createAddToCartAnimation(e, "+ 1")
+        // createActionsDiv(container, indice)
     })
     const icon = create("i",button, null,"far")
     action === "delete" ? icon.classList.add("fa-trash-alt") : icon.classList.add("fa-plus")
@@ -134,9 +164,9 @@ const createCartActionButton = (container, indice, action="add") => {
 }
 
 async function createArticlePage(e, elt) {
-    document.querySelectorAll("main>*").forEach(elt => main.removeChild(elt))
+    document.querySelector("main").replaceChildren("")
 
-    const data = await fetchData();
+    const data = await fetchData()
     let article = data.filter(obj => obj.id === elt.idItem)
     article = article[0]
 
@@ -159,15 +189,15 @@ async function createArticlePage(e, elt) {
 }
 
 async function addArticleToList() {
-    const data = await fetchData();
+    const data = await fetchData()
     data.forEach(elt => createListItem(elt))
 }
 
 async function createArticlesList() {
     
-    document.querySelectorAll("main>*").forEach(elt => main.removeChild(elt))
+    document.querySelector("main").replaceChildren("")
 
-    const data = await fetchData();
+    const data = await fetchData()
 
     createCrousel(main)
     createSearchBox(main)
