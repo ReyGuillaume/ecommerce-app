@@ -50,7 +50,7 @@ body {
     40% {transform: none;}
 }
 
-.add-button {
+.action-button {
     font-size: 1.2rem;
     color: var(--main-color);
     background: none;
@@ -63,7 +63,7 @@ body {
     cursor: pointer;
     transition: .5s ease-in;
 }
-.add-button:hover {
+.action-button:hover {
     background: var(--main-color);
     color: #fff;
 }

@@ -64,7 +64,8 @@ const createListItem = (item) => {
     item.tags.forEach(tag => create("span",tags,tag,"tags__tag"))
     const price = create("div",infos,null,"price")
     create("span",price,`${item.price.toFixed(2)} $`)
-    createAddToCartButton(price, item.id)
+    cart.filter(obj => obj.id === item.id).length > 0 ? createCartActionButton(price, item.id, "delete") : null
+    createCartActionButton(price, item.id)
     art.addEventListener("click", e => createArticlePage(e, art))
     return art
 }
@@ -81,12 +82,18 @@ async function fetchData() {
 
 async function addToCart(e, indice) {
     e.stopPropagation()
-    // alert("Wow ! Trop cool 🎉")
 
     const data = await fetchData();
     const article = data.filter(obj => obj.id === indice)
 
     cart.push(...article)
+}
+
+const deleteFromCart = (e, indice) => {
+    e.stopPropagation()
+
+    let cartCopy = cart.filter(obj => obj.id !== indice)
+    cart = cartCopy
 }
 
 const createArticleCarousel = (container, arr) => {
@@ -115,15 +122,16 @@ const createAddToCartAnimation = (e, text) => {
     setTimeout(() => body.removeChild(anim),2000)
 }
 
-const createAddToCartButton = (container, indice) => {
-    const add = create("button",container,null,"add-button")
-    add.addEventListener("click", e => addToCart(e,indice))
-    const icon = create("i",add, null,"fas")
-    icon.classList.add("fa-plus")
-    add.addEventListener("click",e => createAddToCartAnimation(e, "+ 1"))
-    return add
+const createCartActionButton = (container, indice, action="add") => {
+    const button = create("button",container,null,"action-button")
+    button.addEventListener("click", e => {
+        action === "delete" ? deleteFromCart(e,indice) : addToCart(e,indice)
+        action === "delete" ? createAddToCartAnimation(e, "- 1") : createAddToCartAnimation(e, "+ 1")
+    })
+    const icon = create("i",button, null,"far")
+    action === "delete" ? icon.classList.add("fa-trash-alt") : icon.classList.add("fa-plus")
+    return button
 }
-
 
 async function createArticlePage(e, elt) {
     document.querySelectorAll("main>*").forEach(elt => main.removeChild(elt))
@@ -139,7 +147,9 @@ async function createArticlePage(e, elt) {
     title.appendChild(document.createTextNode(article.name))
     const tags = create("p",heading,null,"tags")
     article.tags.forEach(tag => create("span",tags,tag,"tags__tag"))
-    createAddToCartButton(heading, elt.idItem)
+
+    cart.filter(obj => obj.id === elt.idItem).length > 0 ? createCartActionButton(heading, elt.idItem, "delete") : null
+    createCartActionButton(heading, elt.idItem)
 
     create("p",container,article.description)
 
