@@ -9,3 +9,7 @@ menu.querySelectorAll(".menu__item")
     menu.querySelector(".selected").classList.toggle("selected")
     item.classList.toggle("selected")
 }))
+
+// ======================== Accueil toggler ========================
+const accueilButtons = document.querySelectorAll(".accueil-button")
+accueilButtons.forEach(elt => elt.addEventListener("click", createArticlesList))

@@ -3,7 +3,7 @@ const rabouleLaMoulaga = () => {
 }
 
 async function toggleCart() {
-    document.querySelectorAll("main>*").forEach(elt => main.removeChild(elt))
+    document.querySelector("main").replaceChildren("")
 
     const title = create("h2",main)
     createBackButton(title, createArticlesList)
@@ -20,5 +20,5 @@ async function toggleCart() {
     checkOut.addEventListener("click", rabouleLaMoulaga)
 }
 
-const cartButton = document.querySelector(".cart-button")
-cartButton.addEventListener("click", toggleCart)
+const cartButtons = document.querySelectorAll(".cart-button")
+cartButtons.forEach(elt => elt.addEventListener("click", toggleCart))
