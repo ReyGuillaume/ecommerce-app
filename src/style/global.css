@@ -12,11 +12,12 @@
     --second-color: #77544E; */
     
     /* -------- v1 -------- */
-    --main-color: #7c74e9;
+    --main-color: #7495e9;
     --second-color: #281c76;
 }
 
 body {
+    background-color: #e4f1ff88;
     font-size: 16px;
     font-family: 'Times New Roman', Times, serif;
     overflow-x: hidden;
@@ -187,6 +188,7 @@ nav > * {
     align-items: center;
 }
 .menu a {
+    cursor: pointer;
     display: block;
     color: var(--second-color);
     text-decoration: none;
@@ -235,6 +237,7 @@ footer .footer-list {
     border-bottom: #f3f4f5 2px solid;
 }
 footer .footer-list__element > a {
+    cursor: pointer;
     font-size: 1.25em;
     text-transform: uppercase;
     color: #f3f4f5;
