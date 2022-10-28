@@ -1,0 +1,109 @@
+/* ================= Input Label Animation ================= */
+
+.contact-form {
+    font-size: 16px;
+    margin: auto;
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.contact-form .contact-form__div {
+    position: relative;
+}
+.contact-form .contact-form__input {
+    width: 100%;
+    padding: .625em;
+    border: none;
+    border-radius: 4px;
+    font: inherit;
+    color: var(--main-color);
+    background-color: transparent;
+    outline: 2px solid var(--main-color);
+}
+.contact-form .contact-form__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(.625em, .625em);
+    transform-origin: left;
+    transition: transform .25s;
+}
+.contact-form__input:focus + .contact-form__label,
+.contact-form__input:not(:placeholder-shown) + .contact-form__label {
+    transform: translate(0, -1.875em) scale(.8);
+    color: var(--main-color);
+}
+.contact-form .contact-form__input:is(:focus, :valid) {
+    outline-color: var(--main-color);
+}
+
+/* ================= Send Message Button Animation ================= */
+
+.contact-form__button {
+    margin: auto;
+    cursor: pointer;
+    position: relative;
+    border-radius: .5em;
+    display: inline-block;
+    font-size: 16px;
+    width: 9.375em;
+    height: 3.125em;
+    color: var(--main-color);
+    background: #f3f3f3;
+    overflow: hidden;
+}
+.contact-form__button:focus {
+    animation: morph 1.25s forwards;
+}
+.contact-form__button > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+.contact-form__button i {
+    display: none;
+}
+.contact-form__button .sent,
+.contact-form__button:focus span {
+    opacity: 0;
+    visibility: hidden;
+}
+.contact-form__button:focus .sent {
+    animation: reveal 1s 1.25s forwards;
+}
+.contact-form__button:focus i {
+    display: block;
+    animation: takeOff 1s forwards;
+}
+@keyframes reveal {
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes morph {
+    10%, 80% {
+        width: 3.125em;
+        border-radius: 50%;
+        background: #f3f3f3;
+        color: var(--main-color);
+    }
+    100% {
+        color: #f3f3f3;
+        background: var(--main-color);
+    }
+}
+@keyframes takeOff {
+    5%, 15%, 25%, 35%, 45% {
+        transform: translate(-47%,-50%);
+    }
+    10%, 20%, 30%, 40%, 50% {
+        transform: translate(-53%,-50%);
+    }
+    90%, 100% {
+        transform: translate(100px,-100px);
+    }
+}

@@ -178,8 +178,7 @@ async function createArticlePage(e, elt) {
     const tags = create("p",heading,null,"tags")
     article.tags.forEach(tag => create("span",tags,tag,"tags__tag"))
 
-    cart.filter(obj => obj.id === elt.idItem).length > 0 ? createCartActionButton(heading, elt.idItem, "delete") : null
-    createCartActionButton(heading, elt.idItem)
+    createActionsDiv(heading, elt.idItem)
 
     create("p",container,article.description)
 

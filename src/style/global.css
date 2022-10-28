@@ -266,7 +266,7 @@ footer > .infos {
 @media screen and (max-width: 964px) {
     nav .menu {
         background: #FFF;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: -45vw;
         display: flex;
