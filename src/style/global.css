@@ -8,12 +8,12 @@
 
 :root {
     /* -------- v0 -------- */
-    /* --main-color: #E4A361;
-    --second-color: #77544E; */
+    --main-color: #E4A361;
+    --second-color: #77544E;
     
     /* -------- v1 -------- */
-    --main-color: #7495e9;
-    --second-color: #281c76;
+    /* --main-color: #7495e9;
+    --second-color: #281c76; */
 }
 
 body {

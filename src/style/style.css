@@ -188,13 +188,14 @@
     grid-row: 3;
     padding: 0 1.8rem;
 }
-.article-page__heading .action-button {
-    grid-column: 2;
-    grid-row: 3;
+.article-page__heading .actions:not(button) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.article-page__heading .action-button:last-child {
-    grid-column: 2;
-    grid-row: 1;
+.article-page__heading .actions:not(button) {
+    font-weight: bold;
+    font-size: 1.25rem;
 }
 
 /* ================= Carousel Manual-scroll ================= */

@@ -7,7 +7,8 @@ const sendEmail = (userEmail, subject, message) => {
         From: userEmail,
         Subject: subject,
         Body: message,
-    }).then(alert("mail sent successfully"));
+    })
+    .then(alert("mail sent successfully"))
 }
 
 const createContactForm = () => {
@@ -27,9 +28,8 @@ const createContactForm = () => {
     subjectLabel.htmlFor = "subject"
 
     const messageDiv = create("div", contactForm, null, "contact-form__div")
-    const messageInput = create("input", messageDiv, null, "contact-form__input","message")
+    const messageInput = create("textarea", messageDiv, null, "contact-form__input","message")
     messageInput.placeholder = " "
-    messageInput.type = "text"
     const messageLabel = create("label", messageDiv, "Message", "contact-form__label")
     messageLabel.htmlFor = "message"
 
@@ -51,20 +51,22 @@ async function toggleContact(e) {
     title.appendChild(document.createTextNode("Contact us"))
 
     const form = createContactForm()
-    form.querySelector(".contact-form__button").addEventListener("click", () => {
+    const formButton = form.querySelector(".contact-form__button")
+
+    formButton.addEventListener("click", () => {
         let adress = form.querySelector("#adress").value
         let subject = form.querySelector("#subject").value
         let message = form.querySelector("#message").value
 
         if (adress !== "" && subject !== "" && message !== "") {
-            alert("aeaz")
+            formButton.classList.add("focus-elt")
 
             sendEmail(adress, subject, message)
 
             form.querySelector("#adress").value = ""
             form.querySelector("#subject").value = ""
             form.querySelector("#message").value = ""
-        }
+        } else {alert("A textarea is empty...")}
     })
 }
 

@@ -2,7 +2,7 @@
 
 .contact-form {
     font-size: 16px;
-    margin: auto;
+    margin: 3rem auto;
     width: 75vw;
     display: flex;
     flex-direction: column;
@@ -12,12 +12,14 @@
     position: relative;
 }
 .contact-form .contact-form__input {
-    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 2.5em;
     padding: .625em;
     border: none;
     border-radius: 4px;
     font: inherit;
-    color: var(--main-color);
+    color: var(--second-color);
     background-color: transparent;
     outline: 2px solid var(--main-color);
 }
@@ -53,7 +55,7 @@
     background: #f3f3f3;
     overflow: hidden;
 }
-.contact-form__button:focus {
+.contact-form__button.focus-elt {
     animation: morph 1.25s forwards;
 }
 .contact-form__button > * {
@@ -67,14 +69,14 @@
     display: none;
 }
 .contact-form__button .sent,
-.contact-form__button:focus span {
+.contact-form__button.focus-elt span {
     opacity: 0;
     visibility: hidden;
 }
-.contact-form__button:focus .sent {
+.contact-form__button.focus-elt .sent {
     animation: reveal 1s 1.25s forwards;
 }
-.contact-form__button:focus i {
+.contact-form__button.focus-elt i {
     display: block;
     animation: takeOff 1s forwards;
 }
