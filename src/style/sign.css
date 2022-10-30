@@ -1,0 +1,23 @@
+.hoverlay {
+    background: #0000005f;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hoverlay .sign-form {
+    position: relative;
+    box-shadow: 0 0 1rem #fff;
+    border-radius: 1rem;
+    width: 50vw;
+    max-width: 31.25rem;
+    height: 75vh;
+    max-height: 35rem;
+    background-color: #fff;
+    padding: 1rem;
+}

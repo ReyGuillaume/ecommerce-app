@@ -1,5 +1,5 @@
 const rabouleLaMoulaga = () => {
-    alert("Raboule La MOULAGA et met moi bien ! 🤑")
+    alert("Raboule La MOULAGA et mets moi bien ! 🤑")
 }
 
 async function toggleCart() {
