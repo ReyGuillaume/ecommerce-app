@@ -2,7 +2,7 @@
     background: #0000005f;
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 999;
@@ -10,14 +10,35 @@
     align-items: center;
     justify-content: center;
 }
-.hoverlay .sign-form {
+.sign-form {
     position: relative;
     box-shadow: 0 0 1rem #fff;
     border-radius: 1rem;
     width: 50vw;
     max-width: 31.25rem;
-    height: 75vh;
-    max-height: 35rem;
+    /* height: 75vh;
+    max-height: 35rem; */
     background-color: #fff;
-    padding: 1rem;
+    padding: 3.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+.sign-form button {
+    margin: auto;
+    cursor: pointer;
+    border-radius: .5rem;
+    display: inline-block;
+    width: 9.375rem;
+    height: 3.125rem;
+    text-transform: uppercase;
+    color: var(--main-color);
+    background: #f3f3f3;
+    overflow: hidden;
+    transition: .5s;
+}
+.sign-form button:hover {
+    color: #f3f3f3;
+    background: var(--main-color);
 }

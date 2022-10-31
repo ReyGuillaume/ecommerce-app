@@ -11,29 +11,25 @@ const sendEmail = (userEmail, subject, message) => {
     .then(alert("mail sent successfully"))
 }
 
+const createFormDiv = (container, inputID, inputType, inputLabel, isTextarea=false) => {
+    const div = create("div", container, null, "form__div")
+    isTextarea ? inputTag = "textarea" : inputTag = "input"
+    const input = create(inputTag, div, null, "form__input",inputID)
+    input.placeholder = " "
+    input.type = inputType
+    const label = create("label", div, inputLabel, "form__label")
+    label.htmlFor = inputID
+    return div
+}
+
 const createContactForm = () => {
     const contactForm = create("div",main,null,"contact-form")
-    const adressDiv = create("div", contactForm, null, "contact-form__div")
-    const adressInput = create("input", adressDiv, null, "contact-form__input","adress")
-    adressInput.placeholder = " "
-    adressInput.type = "email"
-    const adressLabel = create("label", adressDiv, "E-mail adress", "contact-form__label")
-    adressLabel.htmlFor = "adress"
 
-    const subjectDiv = create("div", contactForm, null, "contact-form__div")
-    const subjectInput = create("input", subjectDiv, null, "contact-form__input","subject")
-    subjectInput.placeholder = " "
-    subjectInput.type = "text"
-    const subjectLabel = create("label", subjectDiv, "Subject", "contact-form__label")
-    subjectLabel.htmlFor = "subject"
+    createFormDiv(contactForm, "adress", "email", "E-mail adress")
+    createFormDiv(contactForm, "subject", "text", "Subject")
+    createFormDiv(contactForm, "message", "text", "Message", true)
 
-    const messageDiv = create("div", contactForm, null, "contact-form__div")
-    const messageInput = create("textarea", messageDiv, null, "contact-form__input","message")
-    messageInput.placeholder = " "
-    const messageLabel = create("label", messageDiv, "Message", "contact-form__label")
-    messageLabel.htmlFor = "message"
-
-    const submitButton = create("button", contactForm, null, "contact-form__button")
+    const submitButton = create("button", contactForm, null, "form__button")
     create("span", submitButton, "Send message", "send")
     const icon = create("i", submitButton, null, "fas")
     icon.classList.add("fa-paper-plane")
@@ -51,7 +47,7 @@ async function toggleContact(e) {
     title.appendChild(document.createTextNode("Contact us"))
 
     const form = createContactForm()
-    const formButton = form.querySelector(".contact-form__button")
+    const formButton = form.querySelector(".form__button")
 
     formButton.addEventListener("click", () => {
         let adress = form.querySelector("#adress").value

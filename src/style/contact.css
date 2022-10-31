@@ -8,10 +8,10 @@
     flex-direction: column;
     gap: 3rem;
 }
-.contact-form .contact-form__div {
+.form__div {
     position: relative;
 }
-.contact-form .contact-form__input {
+.form__input {
     min-width: 100%;
     max-width: 100%;
     min-height: 2.5em;
@@ -23,7 +23,8 @@
     background-color: transparent;
     outline: 2px solid var(--main-color);
 }
-.contact-form .contact-form__label {
+.form__label {
+    cursor: text;
     position: absolute;
     top: 0;
     left: 0;
@@ -31,18 +32,18 @@
     transform-origin: left;
     transition: transform .25s;
 }
-.contact-form__input:focus + .contact-form__label,
-.contact-form__input:not(:placeholder-shown) + .contact-form__label {
+.form__input:focus + .form__label,
+.form__input:not(:placeholder-shown) + .form__label {
     transform: translate(0, -1.875em) scale(.8);
     color: var(--main-color);
 }
-.contact-form .contact-form__input:is(:focus, :valid) {
+.form__input:is(:focus, :valid) {
     outline-color: var(--main-color);
 }
 
 /* ================= Send Message Button Animation ================= */
 
-.contact-form__button {
+.contact-form .form__button {
     margin: auto;
     cursor: pointer;
     position: relative;
@@ -55,28 +56,28 @@
     background: #f3f3f3;
     overflow: hidden;
 }
-.contact-form__button.focus-elt {
+.contact-form .form__button.focus-elt {
     animation: morph 1.25s forwards;
 }
-.contact-form__button > * {
+.contact-form .form__button > * {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 100%;
 }
-.contact-form__button i {
+.contact-form .form__button i {
     display: none;
 }
-.contact-form__button .sent,
-.contact-form__button.focus-elt span {
+.contact-form .form__button .sent,
+.contact-form .form__button.focus-elt span {
     opacity: 0;
     visibility: hidden;
 }
-.contact-form__button.focus-elt .sent {
+.contact-form .form__button.focus-elt .sent {
     animation: reveal 1s 1.25s forwards;
 }
-.contact-form__button.focus-elt i {
+.contact-form .form__button.focus-elt i {
     display: block;
     animation: takeOff 1s forwards;
 }
