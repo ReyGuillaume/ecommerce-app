@@ -39,14 +39,13 @@ const searchForArticles = (e) => {
 
 const createSearchBox = (container) => {
     const searchBox = create("div",container,null,"search-box")
-    // searchBox.addEventListener("click", () => searchBox.classList.add("open"))
-    // setTimeout(() => searchBox.classList.remove("open"), 5000)
     const input = create("input",searchBox,null,"search-box__input")
     input.type = "text"
     input.placeholder = "Start Looking For A Specific Article"
     input.addEventListener("input", searchForArticles)
     const label = create("label",searchBox,null,"search-box__label","search-input")
     label.htmlFor = "search-input"
+    label.addEventListener("click", e => label.classList.toggle("open"))
     const icon = create("i",label,null,"fas")
     icon.classList.add("fa-search")
     return searchBox

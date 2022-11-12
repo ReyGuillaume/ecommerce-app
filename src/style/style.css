@@ -36,12 +36,13 @@
     transition: .3s;
 }
 .search-box .search-box__input:focus,
+.search-box .search-box__label.open + .search-box__input,
 .search-box:hover > .search-box__input,
-/* .search-box.open > .search-box__input, */
 .search-box .search-box__input:not(:placeholder-shown) {
     width: 17.5em;
     padding: 0 .375em;
 }
+.search-box .open,
 .search-box:hover > label,
 .search-box input:focus + label,
 .search-box input:not(:placeholder-shown) + label {
